@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4</title>
+    <style>
+        .container {
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-image: url(https://media.istockphoto.com/id/1308684522/vi/vec-to/n%E1%BB%81n-tr%E1%BB%ABu-t%C6%B0%E1%BB%A3ng-chuy%E1%BB%83n-%C4%91%E1%BB%99ng-m%E1%BB%9D-m%C3%A0u-xanh-d%C6%B0%C6%A1ng-v%C3%A0-xanh-l%C3%A1-c%C3%A2y.jpg?s=612x612&w=0&k=20&c=vSdG2V4yFBjcKNuD8o_3feTKKf9JOzOHNOgcAdGqaG4=);
+            border-radius: 5px;
+            background-image: -moz-linear-gradient(0.4);
+        }
+        .bmi{
+            padding: 80px;
+            background-color: rgb(248, 247, 247);
+            border-radius: 4px;
+        }
+        h1{
+            color: rgb(46, 6, 251);
+            font-size: 30px;
+            text-align: center;
+            margin-top: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input{
+            width: 100%;  
+            padding: 8px 15px;  
+            margin-bottom: 8px;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            display: block;
+        }
+        #loaituoi{
+            width: 100%;  
+            padding: 8px 15px;  
+            margin-bottom: 8px;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+            display: block;
+        }
+        button{
+            padding: 6px 15px;
+            background-color: #32bee9 ;
+            text-align: center;
+            color: aliceblue;   
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 >TÍNH CHỈ SỐ BMI</h1>
+
+        <div class="bmi">
+            <label style="color: rgb(8, 8, 8);" for="w">Nhập cân nặng?</label>
+            <input type="text" id="w" name="Cân nặng">
+
+            <label style="color: rgb(9, 9, 9);" for="h">Nhập chiều cao?</label>
+            <input type="text" id="h" name="Chiều cao">
+
+            <label style="color: rgb(6, 6, 6);" for="loaituoi">Chọn loại tuổi</label>
+            <select name="Loại tuổi" id="loaituoi">
+                <option value="Trung niên" >Trung niên</option>
+                <option value="Trung niên, Già lớn tuổi">Trung niên, Già lớn tuổi</option>
+                <option value="Già, lớn tuổi">Già, lớn tuổi</option>
+            </select>
+            <div style="text-align: center;">
+                <button onclick="tinhBMI()">TÍNH BMI</button>
+            </div>
+            <div  id="result"></div>
+        </div>
+    </div>
+    <script>
+        function tinhBMI() {
+      var heightInput = document.getElementById("h");
+      var weightInput = document.getElementById("w");
+      var resultDiv = document.getElementById("result");
+      var height = parseFloat(heightInput.value);
+      var weight = parseFloat(weightInput.value);
+    
+      if (isNaN(height) || isNaN(weight)) {
+        resultDiv.innerHTML = "Nhập chiều cao và cân nặng.";
+        return;
+      }
+    
+      var bmi = weight / ((height / 100) ** 2);
+      var category = "";
+      var value = "";
+      if (bmi < 18.5) {
+        category = "Dưới chuẩn";
+      } else if (bmi < 25) {
+        category = "Bình thường";
+      } else if (bmi < 30) {
+        category = "Thừa cân";
+      } else if (bmi < 35)  {
+        category = "Béo phì cấp độ 1 Khám định kỳ";
+      } else if (bmi < 40) {
+        category = "Béo phì cấp độ 2 Tập thể dục thường xuyên";
+      } else {
+        category = "Béo phì cấp độ 3 Hạn chế ăn mỡ động vật";
+      }
+    
+      resultDiv.innerHTML = "Chỉ số BMI của bạn là: " + bmi.toFixed(2) + " (" + category + ")";
+    }
+      </script>
+</body>
+</html>

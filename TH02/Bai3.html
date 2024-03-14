@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+    <style>
+        h1{
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            margin: 8px;
+            font-size: 20px;
+            font-style: normal;
+        }
+        hr{
+            margin-left: 10px;
+        }
+        .left_column{
+            width: 30%;
+            margin: 8px;
+            float: left;
+        }
+        .right_column{
+            width: 65%;
+            margin-right: 8px;
+            float: right;
+        }
+        h2{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            font-size: 15px;
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: left;
+            font-size: 12px;
+            color: gray;
+        }
+        img{
+            width: 12px;
+            float: left;
+            margin-right: 10px;
+        }
+        input{
+            width: 88%;  
+            padding: 8px 15px;  
+            margin-bottom: 8px;
+            box-sizing: border-box;
+            text-align: left;
+            font-size: 12px;
+            color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        div{
+            margin-bottom: 30px;
+        }
+        #nd{
+            width: 88%;  
+            padding: 40px 40px;
+            text-align: left;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+        }
+        button{
+            padding: 6px 15px;
+            background-color: rgb(47, 165, 138) ;
+            text-align: center;
+            color: aliceblue;   
+            border-radius: 5px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+        <h1>LIÊN HỆ</h1>
+        <hr color="red" width="98%" align="left"/>
+
+    <div class="left_column">
+        <h2 style="color: black;">Thông tin</h2>
+        <div>
+            <img src="data:image/png;base64,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" alt="">
+            <p> Kp 6, P.Linh Trung, TP. Thủ Đức, TP. HCM</p>
+        </div>
+        <div>
+            <img src="https://e7.pngegg.com/pngimages/624/1016/png-clipart-email-box-computer-icons-symbol-mini-miscellaneous-angle-thumbnail.png" alt="">
+            <p>info@uit.edu.vn</p>
+        </div>
+        <div>
+            <img src="https://e7.pngegg.com/pngimages/901/956/png-clipart-computer-icons-telephone-call-symbol-phone-miscellaneous-logo-thumbnail.png" alt="">
+            <p>+84 28 372 52002</p>
+        </div>
+    </div>
+    <div class="right_column">
+        <h2 style="color: rgb(126, 26, 220);">Hãy liên lạc với chúng tôi bất cứ khi nào !!!</h2>
+        <form action="">
+            <label for="name"></label>
+                <input type="text" id="fname" name="Họ và tên" value="Họ và tên">
+                <label for="email"></label>
+                <input type="email" id="email" name="Địa chỉ e-mail" value="Địa chỉ e-mail">
+                <label for="tieude"></label>
+                <input type="text" name="Tiêu đề bài viết" id="tieude" value="Tiêu đề bài viết">
+                <label for="noidung"> </label>
+                <input type="text" name="Nội dung cần gửi" id="noidung" value="Nội dung cần gửi">                
+            </form>
+            <div>
+                <button type="submit"> GỬI TIN NHẮN</button>
+            </div>
+    </div>
+</body>
+</html>
